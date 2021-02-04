@@ -4,11 +4,10 @@
 
 import 'dart:convert';
 
-List<Place> placeFromJson(String str) =>
-    List<Place>.from(json.decode(str).map((x) => Place.fromJson(x)));
+List<Place> placeFromJson(String str) => List<Place>.from(
+    (json.decode(str) as List).map((x) => Place.fromJson(Map<String, dynamic>.from(x as Map<dynamic, dynamic>))));
 
-String placeToJson(List<Place> data) =>
-    json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
+String placeToJson(List<Place> data) => json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
 
 class Place {
   Place(
@@ -34,15 +33,21 @@ class Place {
   bool isFav;
 
   factory Place.fromJson(Map<String, dynamic> json) => Place(
-        description: json["description"],
-        duration: json["duration"],
-        imgUrl: json["img_url"],
-        name: json["name"],
-        price: json["price"],
-        rating: json["rating"],
-        reviews: json["reviews"],
+        description: json["description"] as String,
+        duration: json["duration"] as int,
+        imgUrl: json["img_url"] as String,
+        name: json["name"] as String,
+        price: json["price"] as int,
+        rating: json["rating"] as int,
+        reviews: json["reviews"] as int,
         isFav: false,
-        tours: List<Tour>.from(json["tours"].map((x) => Tour.fromJson(x))),
+        tours: List<Tour>.from(
+          (json["tours"] as List).map(
+            (x) => Tour.fromJson(
+              Map<String, dynamic>.from(x as Map<dynamic, dynamic>),
+            ),
+          ),
+        ),
       );
 
   Map<String, dynamic> toJson() => {
@@ -75,11 +80,11 @@ class Tour {
   int distane;
 
   factory Tour.fromJson(Map<String, dynamic> json) => Tour(
-        date: json['date'],
-        desc: json["desc"],
-        distance: json["distance"],
-        img: json["img"],
-        name: json["name"],
+        date: json['date'] as String,
+        desc: json["desc"] as String,
+        distance: json["distance"] as int,
+        img: json["img"] as String,
+        name: json["name"] as String,
       );
 
   Map<String, dynamic> toJson() => {
