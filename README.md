@@ -1,10 +1,10 @@
 
 [![support](https://img.shields.io/badge/plateform-flutter%7Candroid%20studio-9cf?style=for-the-badge&logo=appveyor)](https://github.com/Shadow60539/travel_app)        ![GitHub Repo stars](https://img.shields.io/github/stars/Shadow60539/travel_app?style=for-the-badge)      ![GitHub forks](https://img.shields.io/github/forks/Shadow60539/travel_app?style=for-the-badge)
+![Cover](images/cover.png)
 
 # Introduction
 
-> “Airnbn”
-is a small, simple and beautiful app which lists destinations.
+> Airnbn is a simple prototype app which lists tourist destinations.
 
 Before we start, you can take a look at the app:
 
@@ -92,7 +92,7 @@ Then the lib directory
 directory | explain
 ---|---
 core | Global Classes
-data | Fetching data from backend
+infrastructure | Fetching data from backend
 domain | Converting raw json data into models -DTOs
 application | State Management 
 presentation | UI
