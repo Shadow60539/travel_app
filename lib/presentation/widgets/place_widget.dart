@@ -4,13 +4,13 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:lottie/lottie.dart';
 import 'package:travel_app/application/bloc/places_bloc.dart';
-import 'package:travel_app/core/models/place.dart';
+import 'package:travel_app/domain/place.dart';
 import 'package:travel_app/presentation/pages/destination_page.dart';
 
 class PlaceWidget extends StatefulWidget {
-  final Place place;
+  final Place? place;
   const PlaceWidget({
-    Key key,
+    Key? key,
     this.place,
   }) : super(key: key);
 
@@ -63,14 +63,14 @@ class _PlaceWidgetState extends State<PlaceWidget> {
                 ],
               ),
               child: Hero(
-                tag: widget.place.imgUrl,
+                tag: widget.place!.imgUrl!,
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(20),
                   child: CachedNetworkImage(
                     alignment: Alignment.topCenter,
                     height: 150,
                     fit: BoxFit.cover,
-                    imageUrl: widget.place.imgUrl,
+                    imageUrl: widget.place!.imgUrl!,
                   ),
                 ),
               ),
@@ -81,8 +81,8 @@ class _PlaceWidgetState extends State<PlaceWidget> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(widget.place.name),
-                  if (widget.place.isFav)
+                  Text(widget.place!.name!),
+                  if (widget.place!.isFav!)
                     Lottie.asset('assets/heart.json',
                         height: 30, width: 30, repeat: false)
                   else
@@ -91,7 +91,7 @@ class _PlaceWidgetState extends State<PlaceWidget> {
                         BlocProvider.of<PlacesBloc>(context)
                             .add(const PlacesEvent.getFavCount());
                         setState(() {
-                          widget.place.isFav = true;
+                          widget.place!.isFav = true;
                         });
                       },
                       child: const Padding(
@@ -109,7 +109,7 @@ class _PlaceWidgetState extends State<PlaceWidget> {
               padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
               child: Row(
                   children: List.generate(
-                widget.place.rating,
+                widget.place!.rating!,
                 (index) => const Padding(
                   padding: EdgeInsets.only(right: 5),
                   child: Icon(

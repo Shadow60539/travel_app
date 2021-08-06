@@ -3,13 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:travel_app/core/colors.dart';
 
 class RouteWidget extends StatelessWidget {
-  final String date;
-  final String name;
-  final String desc;
-  final String img;
-  final int km;
+  final String? date;
+  final String? name;
+  final String? desc;
+  final String? img;
+  final int? km;
   const RouteWidget({
-    Key key,
+    Key? key,
     this.date,
     this.name,
     this.desc,
@@ -27,9 +27,11 @@ class RouteWidget extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                date,
+                date!,
                 style: const TextStyle(
-                    color: Colors.black38, fontWeight: FontWeight.bold),
+                  color: Colors.black26,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
               const SizedBox(
                 height: 10,
@@ -40,7 +42,7 @@ class RouteWidget extends StatelessWidget {
                   ClipRRect(
                     borderRadius: BorderRadius.circular(10),
                     child: CachedNetworkImage(
-                      imageUrl: img,
+                      imageUrl: img!,
                       height: 90,
                       width: 70,
                       fit: BoxFit.cover,
@@ -53,15 +55,19 @@ class RouteWidget extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        name,
+                        name!,
                         style: const TextStyle(
-                            fontSize: 16, fontWeight: FontWeight.bold),
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
                       const SizedBox(
                         height: 8,
                       ),
                       Text(
-                        desc.length > 35 ? '${desc.substring(0, 32)}..' : desc,
+                        desc!.length > 35
+                            ? '${desc!.substring(0, 32)}..'
+                            : desc!,
                         overflow: TextOverflow.ellipsis,
                         style: const TextStyle(color: Colors.black45),
                       ),

@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'places_bloc.dart';
 
@@ -9,49 +9,53 @@ part of 'places_bloc.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 /// @nodoc
 class _$PlacesEventTearOff {
   const _$PlacesEventTearOff();
 
-// ignore: unused_element
   AllPlacesEvent getAllPlaces() {
     return const AllPlacesEvent();
   }
 
-// ignore: unused_element
   FavCountEvent getFavCount() {
     return const FavCountEvent();
   }
 }
 
 /// @nodoc
-// ignore: unused_element
 const $PlacesEvent = _$PlacesEventTearOff();
 
 /// @nodoc
 mixin _$PlacesEvent {
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result getAllPlaces(),
-    @required Result getFavCount(),
-  });
+  TResult when<TResult extends Object?>({
+    required TResult Function() getAllPlaces,
+    required TResult Function() getFavCount,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result getAllPlaces(),
-    Result getFavCount(),
-    @required Result orElse(),
-  });
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? getAllPlaces,
+    TResult Function()? getFavCount,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result getAllPlaces(AllPlacesEvent value),
-    @required Result getFavCount(FavCountEvent value),
-  });
+  TResult map<TResult extends Object?>({
+    required TResult Function(AllPlacesEvent value) getAllPlaces,
+    required TResult Function(FavCountEvent value) getFavCount,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result getAllPlaces(AllPlacesEvent value),
-    Result getFavCount(FavCountEvent value),
-    @required Result orElse(),
-  });
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(AllPlacesEvent value)? getAllPlaces,
+    TResult Function(FavCountEvent value)? getFavCount,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -89,6 +93,7 @@ class _$AllPlacesEventCopyWithImpl<$Res> extends _$PlacesEventCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$AllPlacesEvent implements AllPlacesEvent {
   const _$AllPlacesEvent();
 
@@ -107,23 +112,20 @@ class _$AllPlacesEvent implements AllPlacesEvent {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result getAllPlaces(),
-    @required Result getFavCount(),
+  TResult when<TResult extends Object?>({
+    required TResult Function() getAllPlaces,
+    required TResult Function() getFavCount,
   }) {
-    assert(getAllPlaces != null);
-    assert(getFavCount != null);
     return getAllPlaces();
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result getAllPlaces(),
-    Result getFavCount(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? getAllPlaces,
+    TResult Function()? getFavCount,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (getAllPlaces != null) {
       return getAllPlaces();
     }
@@ -132,23 +134,20 @@ class _$AllPlacesEvent implements AllPlacesEvent {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result getAllPlaces(AllPlacesEvent value),
-    @required Result getFavCount(FavCountEvent value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(AllPlacesEvent value) getAllPlaces,
+    required TResult Function(FavCountEvent value) getFavCount,
   }) {
-    assert(getAllPlaces != null);
-    assert(getFavCount != null);
     return getAllPlaces(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result getAllPlaces(AllPlacesEvent value),
-    Result getFavCount(FavCountEvent value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(AllPlacesEvent value)? getAllPlaces,
+    TResult Function(FavCountEvent value)? getFavCount,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (getAllPlaces != null) {
       return getAllPlaces(this);
     }
@@ -179,6 +178,7 @@ class _$FavCountEventCopyWithImpl<$Res> extends _$PlacesEventCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$FavCountEvent implements FavCountEvent {
   const _$FavCountEvent();
 
@@ -197,23 +197,20 @@ class _$FavCountEvent implements FavCountEvent {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result getAllPlaces(),
-    @required Result getFavCount(),
+  TResult when<TResult extends Object?>({
+    required TResult Function() getAllPlaces,
+    required TResult Function() getFavCount,
   }) {
-    assert(getAllPlaces != null);
-    assert(getFavCount != null);
     return getFavCount();
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result getAllPlaces(),
-    Result getFavCount(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? getAllPlaces,
+    TResult Function()? getFavCount,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (getFavCount != null) {
       return getFavCount();
     }
@@ -222,23 +219,20 @@ class _$FavCountEvent implements FavCountEvent {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result getAllPlaces(AllPlacesEvent value),
-    @required Result getFavCount(FavCountEvent value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(AllPlacesEvent value) getAllPlaces,
+    required TResult Function(FavCountEvent value) getFavCount,
   }) {
-    assert(getAllPlaces != null);
-    assert(getFavCount != null);
     return getFavCount(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result getAllPlaces(AllPlacesEvent value),
-    Result getFavCount(FavCountEvent value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(AllPlacesEvent value)? getAllPlaces,
+    TResult Function(FavCountEvent value)? getFavCount,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (getFavCount != null) {
       return getFavCount(this);
     }
@@ -254,11 +248,14 @@ abstract class FavCountEvent implements PlacesEvent {
 class _$PlacesStateTearOff {
   const _$PlacesStateTearOff();
 
-// ignore: unused_element
   _PlacesState call(
-      {@required List<Place> places, bool isLoading, int favCount}) {
+      {required List<Place> places,
+      required Option<Either<PlacesFailure, List<Place>>> placesOption,
+      bool? isLoading,
+      int? favCount}) {
     return _PlacesState(
       places: places,
+      placesOption: placesOption,
       isLoading: isLoading,
       favCount: favCount,
     );
@@ -266,16 +263,19 @@ class _$PlacesStateTearOff {
 }
 
 /// @nodoc
-// ignore: unused_element
 const $PlacesState = _$PlacesStateTearOff();
 
 /// @nodoc
 mixin _$PlacesState {
-  List<Place> get places;
-  bool get isLoading;
-  int get favCount;
+  List<Place> get places => throw _privateConstructorUsedError;
+  Option<Either<PlacesFailure, List<Place>>> get placesOption =>
+      throw _privateConstructorUsedError;
+  bool? get isLoading => throw _privateConstructorUsedError;
+  int? get favCount => throw _privateConstructorUsedError;
 
-  $PlacesStateCopyWith<PlacesState> get copyWith;
+  @JsonKey(ignore: true)
+  $PlacesStateCopyWith<PlacesState> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -283,7 +283,11 @@ abstract class $PlacesStateCopyWith<$Res> {
   factory $PlacesStateCopyWith(
           PlacesState value, $Res Function(PlacesState) then) =
       _$PlacesStateCopyWithImpl<$Res>;
-  $Res call({List<Place> places, bool isLoading, int favCount});
+  $Res call(
+      {List<Place> places,
+      Option<Either<PlacesFailure, List<Place>>> placesOption,
+      bool? isLoading,
+      int? favCount});
 }
 
 /// @nodoc
@@ -296,14 +300,28 @@ class _$PlacesStateCopyWithImpl<$Res> implements $PlacesStateCopyWith<$Res> {
 
   @override
   $Res call({
-    Object places = freezed,
-    Object isLoading = freezed,
-    Object favCount = freezed,
+    Object? places = freezed,
+    Object? placesOption = freezed,
+    Object? isLoading = freezed,
+    Object? favCount = freezed,
   }) {
     return _then(_value.copyWith(
-      places: places == freezed ? _value.places : places as List<Place>,
-      isLoading: isLoading == freezed ? _value.isLoading : isLoading as bool,
-      favCount: favCount == freezed ? _value.favCount : favCount as int,
+      places: places == freezed
+          ? _value.places
+          : places // ignore: cast_nullable_to_non_nullable
+              as List<Place>,
+      placesOption: placesOption == freezed
+          ? _value.placesOption
+          : placesOption // ignore: cast_nullable_to_non_nullable
+              as Option<Either<PlacesFailure, List<Place>>>,
+      isLoading: isLoading == freezed
+          ? _value.isLoading
+          : isLoading // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      favCount: favCount == freezed
+          ? _value.favCount
+          : favCount // ignore: cast_nullable_to_non_nullable
+              as int?,
     ));
   }
 }
@@ -315,7 +333,11 @@ abstract class _$PlacesStateCopyWith<$Res>
           _PlacesState value, $Res Function(_PlacesState) then) =
       __$PlacesStateCopyWithImpl<$Res>;
   @override
-  $Res call({List<Place> places, bool isLoading, int favCount});
+  $Res call(
+      {List<Place> places,
+      Option<Either<PlacesFailure, List<Place>>> placesOption,
+      bool? isLoading,
+      int? favCount});
 }
 
 /// @nodoc
@@ -330,33 +352,53 @@ class __$PlacesStateCopyWithImpl<$Res> extends _$PlacesStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object places = freezed,
-    Object isLoading = freezed,
-    Object favCount = freezed,
+    Object? places = freezed,
+    Object? placesOption = freezed,
+    Object? isLoading = freezed,
+    Object? favCount = freezed,
   }) {
     return _then(_PlacesState(
-      places: places == freezed ? _value.places : places as List<Place>,
-      isLoading: isLoading == freezed ? _value.isLoading : isLoading as bool,
-      favCount: favCount == freezed ? _value.favCount : favCount as int,
+      places: places == freezed
+          ? _value.places
+          : places // ignore: cast_nullable_to_non_nullable
+              as List<Place>,
+      placesOption: placesOption == freezed
+          ? _value.placesOption
+          : placesOption // ignore: cast_nullable_to_non_nullable
+              as Option<Either<PlacesFailure, List<Place>>>,
+      isLoading: isLoading == freezed
+          ? _value.isLoading
+          : isLoading // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      favCount: favCount == freezed
+          ? _value.favCount
+          : favCount // ignore: cast_nullable_to_non_nullable
+              as int?,
     ));
   }
 }
 
 /// @nodoc
+
 class _$_PlacesState implements _PlacesState {
-  const _$_PlacesState({@required this.places, this.isLoading, this.favCount})
-      : assert(places != null);
+  const _$_PlacesState(
+      {required this.places,
+      required this.placesOption,
+      this.isLoading,
+      this.favCount});
 
   @override
   final List<Place> places;
   @override
-  final bool isLoading;
+  final Option<Either<PlacesFailure, List<Place>>> placesOption;
   @override
-  final int favCount;
+  final bool? isLoading;
+  @override
+  final int? favCount;
 
   @override
   String toString() {
-    return 'PlacesState(places: $places, isLoading: $isLoading, favCount: $favCount)';
+    return 'PlacesState(places: $places, placesOption: $placesOption, isLoading: $isLoading, favCount: $favCount)';
   }
 
   @override
@@ -365,6 +407,9 @@ class _$_PlacesState implements _PlacesState {
         (other is _PlacesState &&
             (identical(other.places, places) ||
                 const DeepCollectionEquality().equals(other.places, places)) &&
+            (identical(other.placesOption, placesOption) ||
+                const DeepCollectionEquality()
+                    .equals(other.placesOption, placesOption)) &&
             (identical(other.isLoading, isLoading) ||
                 const DeepCollectionEquality()
                     .equals(other.isLoading, isLoading)) &&
@@ -377,9 +422,11 @@ class _$_PlacesState implements _PlacesState {
   int get hashCode =>
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(places) ^
+      const DeepCollectionEquality().hash(placesOption) ^
       const DeepCollectionEquality().hash(isLoading) ^
       const DeepCollectionEquality().hash(favCount);
 
+  @JsonKey(ignore: true)
   @override
   _$PlacesStateCopyWith<_PlacesState> get copyWith =>
       __$PlacesStateCopyWithImpl<_PlacesState>(this, _$identity);
@@ -387,16 +434,22 @@ class _$_PlacesState implements _PlacesState {
 
 abstract class _PlacesState implements PlacesState {
   const factory _PlacesState(
-      {@required List<Place> places,
-      bool isLoading,
-      int favCount}) = _$_PlacesState;
+      {required List<Place> places,
+      required Option<Either<PlacesFailure, List<Place>>> placesOption,
+      bool? isLoading,
+      int? favCount}) = _$_PlacesState;
 
   @override
-  List<Place> get places;
+  List<Place> get places => throw _privateConstructorUsedError;
   @override
-  bool get isLoading;
+  Option<Either<PlacesFailure, List<Place>>> get placesOption =>
+      throw _privateConstructorUsedError;
   @override
-  int get favCount;
+  bool? get isLoading => throw _privateConstructorUsedError;
   @override
-  _$PlacesStateCopyWith<_PlacesState> get copyWith;
+  int? get favCount => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(ignore: true)
+  _$PlacesStateCopyWith<_PlacesState> get copyWith =>
+      throw _privateConstructorUsedError;
 }

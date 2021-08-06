@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flag/flag.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -23,7 +24,7 @@ class _HomePageState extends State<HomePage> {
         // TODO: implement listener
       },
       builder: (context, state) {
-        if (state.isLoading) {
+        if (state.isLoading!) {
           return Scaffold(
             body: Center(
                 child: Column(
@@ -68,7 +69,7 @@ class _HomePageState extends State<HomePage> {
                               const Text(
                                 'Hi Sanjeev!',
                                 style: TextStyle(
-                                    fontSize: 25,
+                                    fontSize: 18,
                                     color: kGreenColor,
                                     fontWeight: FontWeight.bold),
                               ),
@@ -80,11 +81,14 @@ class _HomePageState extends State<HomePage> {
                                     backgroundColor:
                                         kGreenColor.withOpacity(0.5),
                                   ),
-                                  const CircleAvatar(
-                                    radius: 25,
-                                    backgroundColor: Colors.white,
-                                    backgroundImage: NetworkImage(
-                                        'https://media-exp1.licdn.com/dms/image/C5603AQHQGhYWooaJsA/profile-displayphoto-shrink_800_800/0/1596544415173?e=1617235200&v=beta&t=yd_U_N_mYyMFktB1VZfIN66XBcfa_TwyKy-mv6jfmfA'),
+                                  ClipOval(
+                                    child: CachedNetworkImage(
+                                      imageUrl:
+                                          'https://avatars.githubusercontent.com/u/59445273?v=4',
+                                      height: 50,
+                                      width: 50,
+                                      fit: BoxFit.cover,
+                                    ),
                                   ),
                                 ],
                               )
@@ -99,7 +103,7 @@ class _HomePageState extends State<HomePage> {
                           child: Text(
                             'Discover',
                             style: TextStyle(
-                                fontSize: 28,
+                                fontSize: 18,
                                 fontWeight: FontWeight.bold,
                                 color: Colors.black.withOpacity(0.7)),
                           ),
@@ -189,6 +193,7 @@ class _HomePageState extends State<HomePage> {
                                       kCountryNames[index],
                                       style: const TextStyle(
                                           color: Colors.black87,
+                                          fontSize: 12,
                                           fontWeight: FontWeight.w500),
                                     )
                                   ],
@@ -208,7 +213,7 @@ class _HomePageState extends State<HomePage> {
                               Text(
                                 'Popular Destinations',
                                 style: TextStyle(
-                                    fontSize: 20,
+                                    fontSize: 18,
                                     fontWeight: FontWeight.bold,
                                     color: Colors.black.withOpacity(0.7)),
                               ),
@@ -220,6 +225,7 @@ class _HomePageState extends State<HomePage> {
                                     'See All',
                                     style: TextStyle(
                                         color: kGreenColor,
+                                        fontSize: 10,
                                         fontWeight: FontWeight.bold),
                                   ),
                                   const SizedBox(
@@ -256,11 +262,11 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
                 Container(
-                  height: 70,
+                  height: 60,
                   margin: const EdgeInsets.symmetric(horizontal: 20)
-                      .copyWith(bottom: 20),
+                      .copyWith(bottom: 12.5),
                   decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(35),
+                      borderRadius: BorderRadius.circular(10),
                       color: Colors.white,
                       boxShadow: [
                         BoxShadow(
@@ -271,20 +277,20 @@ class _HomePageState extends State<HomePage> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      const CircleAvatar(
-                        backgroundColor: kGreenColor,
-                        radius: 25,
-                        child: Center(
-                          child: Icon(
-                            FontAwesomeIcons.globeAmericas,
-                            color: Colors.white,
-                            size: 18,
-                          ),
+                      Container(
+                        padding: const EdgeInsets.only(
+                            top: 6, bottom: 8, right: 8, left: 8),
+                        decoration: BoxDecoration(
+                            color: kGreenColor, shape: BoxShape.circle),
+                        child: Icon(
+                          FontAwesomeIcons.globeAmericas,
+                          color: Colors.white,
+                          size: 18,
                         ),
                       ),
                       const CircleAvatar(
                         backgroundColor: Colors.white,
-                        radius: 25,
+                        radius: 15,
                         child: Center(
                           child: Icon(
                             FontAwesomeIcons.map,

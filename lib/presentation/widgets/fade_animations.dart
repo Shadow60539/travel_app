@@ -4,9 +4,9 @@ const kDuration = Duration(milliseconds: 600);
 const kCurve = Curves.easeOutSine;
 
 class FadeFromUpAnimation extends StatefulWidget {
-  final Widget child;
-  final double begin, end;
-  final double drop;
+  final Widget? child;
+  final double? begin, end;
+  final double? drop;
 
   const FadeFromUpAnimation({this.child, this.begin, this.end, this.drop});
   @override
@@ -15,8 +15,8 @@ class FadeFromUpAnimation extends StatefulWidget {
 
 class _FadeFromUpAnimationState extends State<FadeFromUpAnimation>
     with SingleTickerProviderStateMixin {
-  AnimationController _animationController;
-  Animation<Offset> _animation;
+  late AnimationController _animationController;
+  late Animation<Offset> _animation;
 
   @override
   void initState() {
@@ -26,10 +26,10 @@ class _FadeFromUpAnimationState extends State<FadeFromUpAnimation>
       })
       ..forward();
     _animation =
-        Tween<Offset>(begin: Offset(0, widget.drop), end: Offset(0, 0)).animate(
+        Tween<Offset>(begin: Offset(0, widget.drop!), end: Offset(0, 0)).animate(
       CurvedAnimation(
           parent: _animationController,
-          curve: Interval(widget.begin, widget.end, curve: kCurve)),
+          curve: Interval(widget.begin!, widget.end!, curve: kCurve)),
     );
     super.initState();
   }
@@ -56,7 +56,7 @@ class _FadeFromUpAnimationState extends State<FadeFromUpAnimation>
 }
 
 class FadeFromDownAnimation extends StatefulWidget {
-  final Widget child;
+  final Widget? child;
 
   const FadeFromDownAnimation({this.child});
   @override
@@ -65,8 +65,8 @@ class FadeFromDownAnimation extends StatefulWidget {
 
 class _FadeFromDownAnimationState extends State<FadeFromDownAnimation>
     with SingleTickerProviderStateMixin {
-  AnimationController _animationController;
-  Animation<Offset> _animation;
+  late AnimationController _animationController;
+  late Animation<Offset> _animation;
 
   @override
   void initState() {

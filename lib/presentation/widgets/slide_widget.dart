@@ -14,7 +14,7 @@ class ConfirmationSlider extends StatefulWidget {
 
   /// The color of the background of the slider when it has been slide to the end. By giving a value here, the background color
   /// will gradually change from backgroundColor to backgroundColorEnd when the user slides. Is not used by default.
-  final Color backgroundColorEnd;
+  final Color? backgroundColorEnd;
 
   /// The color of the moving element of the slider. Defaults to Colors.blueAccent.
   final Color foregroundColor;
@@ -26,22 +26,22 @@ class ConfirmationSlider extends StatefulWidget {
   final IconData icon;
 
   /// The shadow below the slider. Defaults to BoxShadow(color: Colors.black38, offset: Offset(0, 2),blurRadius: 2,spreadRadius: 0,).
-  final BoxShadow shadow;
+  final BoxShadow? shadow;
 
   /// The text showed below the foreground. Used to specify the functionality to the user. Defaults to "Slide to confirm".
   String text;
 
   /// The style of the text. Defaults to TextStyle(color: Colors.black26, fontWeight: FontWeight.bold,).
-  final TextStyle textStyle;
+  final TextStyle? textStyle;
 
   /// The callback when slider is completed. This is the only required field.
   final VoidCallback onConfirmation;
 
   /// The shape of the moving element of the slider. Defaults to a circular border radius
-  final BorderRadius foregroundShape;
+  final BorderRadius? foregroundShape;
 
   /// The shape of the background of the slider. Defaults to a circular border radius
-  final BorderRadius backgroundShape;
+  final BorderRadius? backgroundShape;
 
   ConfirmationSlider(
       {this.height = 70,
@@ -54,7 +54,7 @@ class ConfirmationSlider extends StatefulWidget {
       this.icon = Icons.chevron_right,
       this.text = "Slide to Book Trip",
       this.textStyle,
-      @required this.onConfirmation,
+      required this.onConfirmation,
       this.foregroundShape,
       this.backgroundShape})
       : assert(height >= 25 && width >= 250);
@@ -135,9 +135,9 @@ class ConfirmationSliderState extends State<ConfirmationSlider> {
       percent = 0.0;
     }
 
-    int red = widget.backgroundColorEnd.red;
-    int green = widget.backgroundColorEnd.green;
-    int blue = widget.backgroundColorEnd.blue;
+    int red = widget.backgroundColorEnd!.red;
+    int green = widget.backgroundColorEnd!.green;
+    int blue = widget.backgroundColorEnd!.blue;
 
     return Color.alphaBlend(
         Color.fromRGBO(red, green, blue, percent), widget.backgroundColor);
@@ -145,7 +145,7 @@ class ConfirmationSliderState extends State<ConfirmationSlider> {
 
   @override
   Widget build(BuildContext context) {
-    BoxShadow shadow;
+    BoxShadow? shadow;
     if (widget.shadow == null) {
       shadow = BoxShadow(
         color: Colors.black38,
@@ -157,7 +157,7 @@ class ConfirmationSliderState extends State<ConfirmationSlider> {
       shadow = widget.shadow;
     }
 
-    TextStyle style;
+    TextStyle? style;
     if (widget.textStyle == null) {
       style = TextStyle(
         color: Colors.black26,

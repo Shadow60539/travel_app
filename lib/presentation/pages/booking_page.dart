@@ -1,14 +1,14 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:travel_app/core/models/place.dart';
+import 'package:travel_app/domain/place.dart';
 import 'package:travel_app/presentation/widgets/fade_animations.dart';
 import 'package:travel_app/presentation/widgets/slide_widget.dart';
 
 class BookingPage extends StatefulWidget {
-  final Place place;
+  final Place? place;
 
-  const BookingPage({Key key, this.place}) : super(key: key);
+  const BookingPage({Key? key, this.place}) : super(key: key);
   @override
   _BookingPageState createState() => _BookingPageState();
 }
@@ -21,10 +21,13 @@ class _BookingPageState extends State<BookingPage> {
         body: Stack(
           fit: StackFit.expand,
           children: [
-            CachedNetworkImage(
-              imageUrl: widget.place.imgUrl,
-              fit: BoxFit.cover,
-              // height: MediaQuery.of(context).size.height * 0.5,
+            Hero(
+              tag: widget.place!.imgUrl!,
+              child: CachedNetworkImage(
+                imageUrl: widget.place!.imgUrl!,
+                fit: BoxFit.cover,
+                // height: MediaQuery.of(context).size.height * 0.5,
+              ),
             ),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -48,7 +51,7 @@ class _BookingPageState extends State<BookingPage> {
                           ),
                         ),
                         Text(
-                          widget.place.rating.toDouble().toString(),
+                          widget.place!.rating!.toDouble().toString(),
                           style: const TextStyle(
                             color: Colors.white,
                             fontSize: 18,
@@ -66,7 +69,7 @@ class _BookingPageState extends State<BookingPage> {
                   child: Padding(
                     padding: const EdgeInsets.only(left: 20),
                     child: Text(
-                      '${widget.place.reviews} Reviews',
+                      '${widget.place!.reviews} Reviews',
                       style: const TextStyle(
                         color: Colors.white54,
                         fontSize: 14,
@@ -83,7 +86,7 @@ class _BookingPageState extends State<BookingPage> {
                     padding: const EdgeInsets.symmetric(horizontal: 20)
                         .copyWith(top: 20),
                     child: Text(
-                      widget.place.name,
+                      widget.place!.name!,
                       style: const TextStyle(
                           color: Colors.white,
                           fontWeight: FontWeight.bold,
@@ -101,7 +104,7 @@ class _BookingPageState extends State<BookingPage> {
                   child: Padding(
                     padding: const EdgeInsets.only(left: 20, right: 20),
                     child: Text(
-                      widget.place.description,
+                      widget.place!.description!,
                       overflow: TextOverflow.ellipsis,
                       maxLines: 4,
                       style: const TextStyle(
@@ -138,7 +141,7 @@ class _BookingPageState extends State<BookingPage> {
                           width: 5,
                         ),
                         Text(
-                          '\$${widget.place.price}',
+                          '\$${widget.place!.price}',
                           style: const TextStyle(
                             height: 1.5,
                             color: Colors.white,
