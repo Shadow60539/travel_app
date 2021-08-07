@@ -7,18 +7,13 @@ import 'package:travel_app/application/bloc/places_bloc.dart';
 import 'package:travel_app/domain/place.dart';
 import 'package:travel_app/presentation/pages/destination_page.dart';
 
-class PlaceWidget extends StatefulWidget {
+class PlaceWidget extends StatelessWidget {
   final Place? place;
   const PlaceWidget({
     Key? key,
     this.place,
   }) : super(key: key);
 
-  @override
-  _PlaceWidgetState createState() => _PlaceWidgetState();
-}
-
-class _PlaceWidgetState extends State<PlaceWidget> {
   @override
   Widget build(BuildContext context) {
     return InkWell(
@@ -27,7 +22,7 @@ class _PlaceWidgetState extends State<PlaceWidget> {
             context,
             MaterialPageRoute(
               builder: (context) => DestinationPage(
-                place: widget.place,
+                place: place,
               ),
             ));
       },
@@ -63,14 +58,14 @@ class _PlaceWidgetState extends State<PlaceWidget> {
                 ],
               ),
               child: Hero(
-                tag: widget.place!.imgUrl!,
+                tag: place!.imgUrl,
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(20),
                   child: CachedNetworkImage(
                     alignment: Alignment.topCenter,
                     height: 150,
                     fit: BoxFit.cover,
-                    imageUrl: widget.place!.imgUrl!,
+                    imageUrl: place!.imgUrl,
                   ),
                 ),
               ),
@@ -81,18 +76,15 @@ class _PlaceWidgetState extends State<PlaceWidget> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(widget.place!.name!),
-                  if (widget.place!.isFav!)
+                  Text(place!.name),
+                  if (place!.isFav)
                     Lottie.asset('assets/heart.json',
                         height: 30, width: 30, repeat: false)
                   else
                     InkWell(
                       onTap: () {
                         BlocProvider.of<PlacesBloc>(context)
-                            .add(const PlacesEvent.getFavCount());
-                        setState(() {
-                          widget.place!.isFav = true;
-                        });
+                            .add(PlacesEvent.markFavorite(place!.id));
                       },
                       child: const Padding(
                         padding: EdgeInsets.all(10),
@@ -109,7 +101,7 @@ class _PlaceWidgetState extends State<PlaceWidget> {
               padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
               child: Row(
                   children: List.generate(
-                widget.place!.rating!,
+                place!.rating,
                 (index) => const Padding(
                   padding: EdgeInsets.only(right: 5),
                   child: Icon(

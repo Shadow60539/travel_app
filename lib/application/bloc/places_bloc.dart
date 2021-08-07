@@ -43,9 +43,11 @@ class PlacesBloc extends Bloc<PlacesEvent, PlacesState> {
           ),
         );
       },
-      getFavCount: (e) async* {
-        yield state.copyWith(
-            favCount: state.places.where((e) => e.isFav!).toList().length);
+      markFavorite: (e) async* {
+        final int index =
+            state.places.indexWhere((element) => element.id == e.id);
+        state.places[index] = state.places[index].copyWith(isFav: true);
+        yield state.copyWith(favCount: state.favCount! + 1);
       },
     );
   }

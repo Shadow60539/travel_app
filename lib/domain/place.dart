@@ -2,95 +2,41 @@
 //
 //     final place = placeFromJson(jsonString);
 
-import 'dart:convert';
+import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:json_annotation/json_annotation.dart';
 
-List<Place> placeFromJson(dynamic str) => List<Place>.from(
-    (str as List).map((x) => Place.fromJson(Map<String, dynamic>.from(x as Map<dynamic, dynamic>))));
+part 'place.freezed.dart';
+part 'place.g.dart';
 
-String placeToJson(List<Place> data) => json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
+@freezed
+class Place with _$Place {
+  const factory Place({
+    @JsonKey(name: "_id")
+    required int id,
+    required String description,
+    required int duration,
+    @JsonKey(name: "img_url")
+    required String imgUrl,
+    required String name,
+    required int price,
+    required int rating,
+    required int reviews,
+    required List<Tour> tours,
+    @Default(false) bool isFav,
+  }) = _Place;
 
-class Place {
-  Place(
-      {this.description,
-      this.duration,
-      this.imgUrl,
-      this.name,
-      this.price,
-      this.rating,
-      this.reviews,
-      this.tours,
-      this.isFav});
-
-  int? id;
-  String? description;
-  int? duration;
-  String? imgUrl;
-  String? name;
-  int? price;
-  int? rating;
-  int? reviews;
-  List<Tour>? tours;
-  bool? isFav;
-
-  factory Place.fromJson(Map<String, dynamic> json) => Place(
-        description: json["description"] as String?,
-        duration: json["duration"] as int?,
-        imgUrl: json["img_url"] as String?,
-        name: json["name"] as String?,
-        price: json["price"] as int?,
-        rating: json["rating"] as int?,
-        reviews: json["reviews"] as int?,
-        isFav: false,
-        tours: List<Tour>.from(
-          (json["tours"] as List).map(
-            (x) => Tour.fromJson(
-              Map<String, dynamic>.from(x as Map<dynamic, dynamic>),
-            ),
-          ),
-        ),
-      );
-
-  Map<String, dynamic> toJson() => {
-        "description": description,
-        "duration": duration,
-        "img_url": imgUrl,
-        "name": name,
-        "price": price,
-        "rating": rating,
-        "reviews": reviews,
-        "tours": List<dynamic>.from(tours!.map((x) => x.toJson())),
-      };
+  factory Place.fromJson(Map<String, dynamic> json) => _$PlaceFromJson(json);
 }
 
-class Tour {
-  Tour({
-    this.date,
-    this.desc,
-    this.distance,
-    this.img,
-    this.name,
-    this.distane,
-  });
+@freezed
+class Tour with _$Tour {
+  const factory Tour({
+    required String date,
+    required String desc,
+    required int distance,
+    required String img,
+    required String name,
+  }) = _Tour;
 
-  String? date;
-  String? desc;
-  int? distance;
-  String? img;
-  String? name;
-  int? distane;
-
-  factory Tour.fromJson(Map<String, dynamic> json) => Tour(
-        date: json['date'] as String?,
-        desc: json["desc"] as String?,
-        distance: json["distance"] as int?,
-        img: json["img"] as String?,
-        name: json["name"] as String?,
-      );
-
-  Map<String, dynamic> toJson() => {
-        "desc": desc,
-        "distance": distance,
-        "img": img,
-        "name": name,
-      };
+  factory Tour.fromJson(Map<String, dynamic> json) => _$TourFromJson(json);
 }

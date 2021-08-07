@@ -5,6 +5,8 @@ import 'package:travel_app/domain/place.dart';
 import 'package:travel_app/presentation/widgets/fade_animations.dart';
 import 'package:travel_app/presentation/widgets/slide_widget.dart';
 
+import 'home_page.dart';
+
 class BookingPage extends StatefulWidget {
   final Place? place;
 
@@ -22,9 +24,9 @@ class _BookingPageState extends State<BookingPage> {
           fit: StackFit.expand,
           children: [
             Hero(
-              tag: widget.place!.imgUrl!,
+              tag: widget.place!.imgUrl,
               child: CachedNetworkImage(
-                imageUrl: widget.place!.imgUrl!,
+                imageUrl: widget.place!.imgUrl,
                 fit: BoxFit.cover,
                 // height: MediaQuery.of(context).size.height * 0.5,
               ),
@@ -51,7 +53,7 @@ class _BookingPageState extends State<BookingPage> {
                           ),
                         ),
                         Text(
-                          widget.place!.rating!.toDouble().toString(),
+                          widget.place!.rating.toDouble().toString(),
                           style: const TextStyle(
                             color: Colors.white,
                             fontSize: 18,
@@ -86,7 +88,7 @@ class _BookingPageState extends State<BookingPage> {
                     padding: const EdgeInsets.symmetric(horizontal: 20)
                         .copyWith(top: 20),
                     child: Text(
-                      widget.place!.name!,
+                      widget.place!.name,
                       style: const TextStyle(
                           color: Colors.white,
                           fontWeight: FontWeight.bold,
@@ -104,7 +106,7 @@ class _BookingPageState extends State<BookingPage> {
                   child: Padding(
                     padding: const EdgeInsets.only(left: 20, right: 20),
                     child: Text(
-                      widget.place!.description!,
+                      widget.place!.description,
                       overflow: TextOverflow.ellipsis,
                       maxLines: 4,
                       style: const TextStyle(

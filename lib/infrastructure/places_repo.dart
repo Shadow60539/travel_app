@@ -17,7 +17,13 @@ class PlacesRepo extends IPlacesRepository {
       final Response response =
           await Dio(BaseOptions()).get(ApiEndPoints.getAllPlaces);
       if (response.statusCode == 200 || response.statusCode == 201) {
-        return Right(placeFromJson(response.data));
+        final List<Place> places = [];
+
+        for (final raw in response.data) {
+          places.add(Place.fromJson(raw as Map<String, dynamic>));
+        }
+
+        return Right(places);
       } else {
         return const Left(PlacesFailure.serverFailure());
       }

@@ -46,9 +46,9 @@ class _DestinationPageState extends State<DestinationPage>
         body: Stack(
           children: [
             Hero(
-              tag: widget.place!.imgUrl!,
+              tag: widget.place!.imgUrl,
               child: CachedNetworkImage(
-                imageUrl: widget.place!.imgUrl!,
+                imageUrl: widget.place!.imgUrl,
                 fit: BoxFit.cover,
                 height: MediaQuery.of(context).size.height * 0.5,
               ),
@@ -79,7 +79,7 @@ class _DestinationPageState extends State<DestinationPage>
                   padding: const EdgeInsets.symmetric(horizontal: 20)
                       .copyWith(top: 20),
                   child: Text(
-                    widget.place!.name!,
+                    widget.place!.name,
                     style: const TextStyle(
                         color: Colors.white,
                         fontWeight: FontWeight.bold,
@@ -99,7 +99,7 @@ class _DestinationPageState extends State<DestinationPage>
                       const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
                   child: Row(
                     children: List.generate(
-                      widget.place!.rating!,
+                      widget.place!.rating,
                       (index) => const Padding(
                         padding: EdgeInsets.only(right: 10),
                         child: Icon(
@@ -193,7 +193,7 @@ class _DestinationPageState extends State<DestinationPage>
                             ),
                           ),
                           Column(
-                            children: List.generate(widget.place!.tours!.length,
+                            children: List.generate(widget.place!.tours.length,
                                 (index) {
                               return Column(
                                 children: [
@@ -205,11 +205,11 @@ class _DestinationPageState extends State<DestinationPage>
                                     end: 1.0,
                                     drop: 0.1,
                                     child: RouteWidget(
-                                      name: widget.place!.tours![index].name,
-                                      img: widget.place!.tours![index].img,
-                                      desc: widget.place!.tours![index].desc,
-                                      date: widget.place!.tours![index].date,
-                                      km: widget.place!.tours![index].distance,
+                                      name: widget.place!.tours[index].name,
+                                      img: widget.place!.tours[index].img,
+                                      desc: widget.place!.tours[index].desc,
+                                      date: widget.place!.tours[index].date,
+                                      km: widget.place!.tours[index].distance,
                                     ),
                                   ),
                                 ],

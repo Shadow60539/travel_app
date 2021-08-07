@@ -20,8 +20,10 @@ class _$PlacesEventTearOff {
     return const AllPlacesEvent();
   }
 
-  FavCountEvent getFavCount() {
-    return const FavCountEvent();
+  _MarkFavorite markFavorite(int id) {
+    return _MarkFavorite(
+      id,
+    );
   }
 }
 
@@ -33,26 +35,26 @@ mixin _$PlacesEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() getAllPlaces,
-    required TResult Function() getFavCount,
+    required TResult Function(int id) markFavorite,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? getAllPlaces,
-    TResult Function()? getFavCount,
+    TResult Function(int id)? markFavorite,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(AllPlacesEvent value) getAllPlaces,
-    required TResult Function(FavCountEvent value) getFavCount,
+    required TResult Function(_MarkFavorite value) markFavorite,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AllPlacesEvent value)? getAllPlaces,
-    TResult Function(FavCountEvent value)? getFavCount,
+    TResult Function(_MarkFavorite value)? markFavorite,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -114,7 +116,7 @@ class _$AllPlacesEvent implements AllPlacesEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() getAllPlaces,
-    required TResult Function() getFavCount,
+    required TResult Function(int id) markFavorite,
   }) {
     return getAllPlaces();
   }
@@ -123,7 +125,7 @@ class _$AllPlacesEvent implements AllPlacesEvent {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? getAllPlaces,
-    TResult Function()? getFavCount,
+    TResult Function(int id)? markFavorite,
     required TResult orElse(),
   }) {
     if (getAllPlaces != null) {
@@ -136,7 +138,7 @@ class _$AllPlacesEvent implements AllPlacesEvent {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(AllPlacesEvent value) getAllPlaces,
-    required TResult Function(FavCountEvent value) getFavCount,
+    required TResult Function(_MarkFavorite value) markFavorite,
   }) {
     return getAllPlaces(this);
   }
@@ -145,7 +147,7 @@ class _$AllPlacesEvent implements AllPlacesEvent {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AllPlacesEvent value)? getAllPlaces,
-    TResult Function(FavCountEvent value)? getFavCount,
+    TResult Function(_MarkFavorite value)? markFavorite,
     required TResult orElse(),
   }) {
     if (getAllPlaces != null) {
@@ -160,59 +162,84 @@ abstract class AllPlacesEvent implements PlacesEvent {
 }
 
 /// @nodoc
-abstract class $FavCountEventCopyWith<$Res> {
-  factory $FavCountEventCopyWith(
-          FavCountEvent value, $Res Function(FavCountEvent) then) =
-      _$FavCountEventCopyWithImpl<$Res>;
+abstract class _$MarkFavoriteCopyWith<$Res> {
+  factory _$MarkFavoriteCopyWith(
+          _MarkFavorite value, $Res Function(_MarkFavorite) then) =
+      __$MarkFavoriteCopyWithImpl<$Res>;
+  $Res call({int id});
 }
 
 /// @nodoc
-class _$FavCountEventCopyWithImpl<$Res> extends _$PlacesEventCopyWithImpl<$Res>
-    implements $FavCountEventCopyWith<$Res> {
-  _$FavCountEventCopyWithImpl(
-      FavCountEvent _value, $Res Function(FavCountEvent) _then)
-      : super(_value, (v) => _then(v as FavCountEvent));
+class __$MarkFavoriteCopyWithImpl<$Res> extends _$PlacesEventCopyWithImpl<$Res>
+    implements _$MarkFavoriteCopyWith<$Res> {
+  __$MarkFavoriteCopyWithImpl(
+      _MarkFavorite _value, $Res Function(_MarkFavorite) _then)
+      : super(_value, (v) => _then(v as _MarkFavorite));
 
   @override
-  FavCountEvent get _value => super._value as FavCountEvent;
+  _MarkFavorite get _value => super._value as _MarkFavorite;
+
+  @override
+  $Res call({
+    Object? id = freezed,
+  }) {
+    return _then(_MarkFavorite(
+      id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
 }
 
 /// @nodoc
 
-class _$FavCountEvent implements FavCountEvent {
-  const _$FavCountEvent();
+class _$_MarkFavorite implements _MarkFavorite {
+  const _$_MarkFavorite(this.id);
+
+  @override
+  final int id;
 
   @override
   String toString() {
-    return 'PlacesEvent.getFavCount()';
+    return 'PlacesEvent.markFavorite(id: $id)';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is FavCountEvent);
+    return identical(this, other) ||
+        (other is _MarkFavorite &&
+            (identical(other.id, id) ||
+                const DeepCollectionEquality().equals(other.id, id)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(id);
+
+  @JsonKey(ignore: true)
+  @override
+  _$MarkFavoriteCopyWith<_MarkFavorite> get copyWith =>
+      __$MarkFavoriteCopyWithImpl<_MarkFavorite>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() getAllPlaces,
-    required TResult Function() getFavCount,
+    required TResult Function(int id) markFavorite,
   }) {
-    return getFavCount();
+    return markFavorite(id);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? getAllPlaces,
-    TResult Function()? getFavCount,
+    TResult Function(int id)? markFavorite,
     required TResult orElse(),
   }) {
-    if (getFavCount != null) {
-      return getFavCount();
+    if (markFavorite != null) {
+      return markFavorite(id);
     }
     return orElse();
   }
@@ -221,27 +248,32 @@ class _$FavCountEvent implements FavCountEvent {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(AllPlacesEvent value) getAllPlaces,
-    required TResult Function(FavCountEvent value) getFavCount,
+    required TResult Function(_MarkFavorite value) markFavorite,
   }) {
-    return getFavCount(this);
+    return markFavorite(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AllPlacesEvent value)? getAllPlaces,
-    TResult Function(FavCountEvent value)? getFavCount,
+    TResult Function(_MarkFavorite value)? markFavorite,
     required TResult orElse(),
   }) {
-    if (getFavCount != null) {
-      return getFavCount(this);
+    if (markFavorite != null) {
+      return markFavorite(this);
     }
     return orElse();
   }
 }
 
-abstract class FavCountEvent implements PlacesEvent {
-  const factory FavCountEvent() = _$FavCountEvent;
+abstract class _MarkFavorite implements PlacesEvent {
+  const factory _MarkFavorite(int id) = _$_MarkFavorite;
+
+  int get id => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$MarkFavoriteCopyWith<_MarkFavorite> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
