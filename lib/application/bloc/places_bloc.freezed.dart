@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'places_bloc.dart';
 
@@ -39,6 +40,12 @@ mixin _$PlacesEvent {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? getAllPlaces,
+    TResult Function(int id)? markFavorite,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? getAllPlaces,
     TResult Function(int id)? markFavorite,
@@ -49,6 +56,12 @@ mixin _$PlacesEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(AllPlacesEvent value) getAllPlaces,
     required TResult Function(_MarkFavorite value) markFavorite,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(AllPlacesEvent value)? getAllPlaces,
+    TResult Function(_MarkFavorite value)? markFavorite,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -106,7 +119,8 @@ class _$AllPlacesEvent implements AllPlacesEvent {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is AllPlacesEvent);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is AllPlacesEvent);
   }
 
   @override
@@ -119,6 +133,15 @@ class _$AllPlacesEvent implements AllPlacesEvent {
     required TResult Function(int id) markFavorite,
   }) {
     return getAllPlaces();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? getAllPlaces,
+    TResult Function(int id)? markFavorite,
+  }) {
+    return getAllPlaces?.call();
   }
 
   @override
@@ -141,6 +164,15 @@ class _$AllPlacesEvent implements AllPlacesEvent {
     required TResult Function(_MarkFavorite value) markFavorite,
   }) {
     return getAllPlaces(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(AllPlacesEvent value)? getAllPlaces,
+    TResult Function(_MarkFavorite value)? markFavorite,
+  }) {
+    return getAllPlaces?.call(this);
   }
 
   @override
@@ -208,14 +240,13 @@ class _$_MarkFavorite implements _MarkFavorite {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _MarkFavorite &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)));
+        (other.runtimeType == runtimeType &&
+            other is _MarkFavorite &&
+            (identical(other.id, id) || other.id == id));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(id);
+  int get hashCode => Object.hash(runtimeType, id);
 
   @JsonKey(ignore: true)
   @override
@@ -229,6 +260,15 @@ class _$_MarkFavorite implements _MarkFavorite {
     required TResult Function(int id) markFavorite,
   }) {
     return markFavorite(id);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? getAllPlaces,
+    TResult Function(int id)? markFavorite,
+  }) {
+    return markFavorite?.call(id);
   }
 
   @override
@@ -255,6 +295,15 @@ class _$_MarkFavorite implements _MarkFavorite {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(AllPlacesEvent value)? getAllPlaces,
+    TResult Function(_MarkFavorite value)? markFavorite,
+  }) {
+    return markFavorite?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AllPlacesEvent value)? getAllPlaces,
     TResult Function(_MarkFavorite value)? markFavorite,
@@ -270,7 +319,7 @@ class _$_MarkFavorite implements _MarkFavorite {
 abstract class _MarkFavorite implements PlacesEvent {
   const factory _MarkFavorite(int id) = _$_MarkFavorite;
 
-  int get id => throw _privateConstructorUsedError;
+  int get id;
   @JsonKey(ignore: true)
   _$MarkFavoriteCopyWith<_MarkFavorite> get copyWith =>
       throw _privateConstructorUsedError;
@@ -436,27 +485,24 @@ class _$_PlacesState implements _PlacesState {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _PlacesState &&
-            (identical(other.places, places) ||
-                const DeepCollectionEquality().equals(other.places, places)) &&
+        (other.runtimeType == runtimeType &&
+            other is _PlacesState &&
+            const DeepCollectionEquality().equals(other.places, places) &&
             (identical(other.placesOption, placesOption) ||
-                const DeepCollectionEquality()
-                    .equals(other.placesOption, placesOption)) &&
+                other.placesOption == placesOption) &&
             (identical(other.isLoading, isLoading) ||
-                const DeepCollectionEquality()
-                    .equals(other.isLoading, isLoading)) &&
+                other.isLoading == isLoading) &&
             (identical(other.favCount, favCount) ||
-                const DeepCollectionEquality()
-                    .equals(other.favCount, favCount)));
+                other.favCount == favCount));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(places) ^
-      const DeepCollectionEquality().hash(placesOption) ^
-      const DeepCollectionEquality().hash(isLoading) ^
-      const DeepCollectionEquality().hash(favCount);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(places),
+      placesOption,
+      isLoading,
+      favCount);
 
   @JsonKey(ignore: true)
   @override
@@ -472,14 +518,13 @@ abstract class _PlacesState implements PlacesState {
       int? favCount}) = _$_PlacesState;
 
   @override
-  List<Place> get places => throw _privateConstructorUsedError;
+  List<Place> get places;
   @override
-  Option<Either<PlacesFailure, List<Place>>> get placesOption =>
-      throw _privateConstructorUsedError;
+  Option<Either<PlacesFailure, List<Place>>> get placesOption;
   @override
-  bool? get isLoading => throw _privateConstructorUsedError;
+  bool? get isLoading;
   @override
-  int? get favCount => throw _privateConstructorUsedError;
+  int? get favCount;
   @override
   @JsonKey(ignore: true)
   _$PlacesStateCopyWith<_PlacesState> get copyWith =>

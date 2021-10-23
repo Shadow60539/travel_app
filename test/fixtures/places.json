@@ -1,0 +1,21 @@
+[
+    {
+        "_id": 1,
+        "description": "The Faroe Islands is a self-governing archipelago, part of the Kingdom of Denmark. It comprises 18 rocky, volcanic islands between Iceland and Norway in the North Atlantic Ocean, connected by road tunnels, ferries, causeways and bridges. Hikers and bird-watchers are drawn to the islands’ mountains, valleys and grassy heathland, and steep coastal cliffs that harbor thousands of seabirds.",
+        "duration": 15,
+        "img_url": "https://images.unsplash.com/photo-1554610975-1fa324cfb60b?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1189&q=80",
+        "name": "Faroe Islands",
+        "price": 5000,
+        "rating": 5,
+        "reviews": 500,
+        "tours": [
+            {
+                "date": "17.05.21",
+                "desc": "Scenic island with a puffin population",
+                "distance": 150,
+                "img": "https://images.unsplash.com/photo-1506457469115-39b5cced7b7a?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8bXlraW5lc3xlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+                "name": "Mykines"
+            }
+        ]
+    }
+]

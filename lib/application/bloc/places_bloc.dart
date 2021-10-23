@@ -2,23 +2,24 @@ import 'dart:async';
 
 import 'package:bloc/bloc.dart';
 import 'package:dartz/dartz.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:meta/meta.dart';
-import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:travel_app/domain/place.dart';
-import 'package:travel_app/domain/i_places_repository.dart';
-import 'package:travel_app/domain/places_failure.dart';
+import 'package:travel_app/core/usecase.dart';
+import 'package:travel_app/domain/entities/place.dart';
+import 'package:travel_app/domain/failures/places_failure.dart';
+import 'package:travel_app/domain/usecases/get_all_places.dart';
 
+part 'places_bloc.freezed.dart';
 part 'places_event.dart';
 part 'places_state.dart';
-part 'places_bloc.freezed.dart';
 
 @injectable
 @prod
 class PlacesBloc extends Bloc<PlacesEvent, PlacesState> {
-  PlacesBloc(this.repository) : super(PlacesState.initial());
+  PlacesBloc(this.getAllPlacesUseCase) : super(PlacesState.initial());
 
-  final IPlacesRepository repository;
+  final GetAllPlaces getAllPlacesUseCase;
 
   @override
   Stream<PlacesState> mapEventToState(
@@ -28,7 +29,7 @@ class PlacesBloc extends Bloc<PlacesEvent, PlacesState> {
       getAllPlaces: (e) async* {
         yield state.copyWith(isLoading: true);
         final Either<PlacesFailure, List<Place>> placesOption =
-            await repository.getAllPlaces();
+            await getAllPlacesUseCase(const NoParams());
 
         yield placesOption.fold(
           (l) => state.copyWith(

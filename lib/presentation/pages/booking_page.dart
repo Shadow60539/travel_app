@@ -1,11 +1,9 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:travel_app/domain/place.dart';
+import 'package:travel_app/domain/entities/place.dart';
 import 'package:travel_app/presentation/widgets/fade_animations.dart';
 import 'package:travel_app/presentation/widgets/slide_widget.dart';
-
-import 'home_page.dart';
 
 class BookingPage extends StatefulWidget {
   final Place? place;

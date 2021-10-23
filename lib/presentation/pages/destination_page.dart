@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:travel_app/core/colors.dart';
-import 'package:travel_app/domain/place.dart';
+import 'package:travel_app/domain/entities/place.dart';
 import 'package:travel_app/presentation/pages/booking_page.dart';
 import 'package:travel_app/presentation/widgets/fade_animations.dart';
 import 'package:travel_app/presentation/widgets/progress_painter.dart';

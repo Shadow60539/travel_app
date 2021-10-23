@@ -4,7 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:lottie/lottie.dart';
 import 'package:travel_app/application/bloc/places_bloc.dart';
-import 'package:travel_app/domain/place.dart';
+import 'package:travel_app/domain/entities/place.dart';
 import 'package:travel_app/presentation/pages/destination_page.dart';
 
 class PlaceWidget extends StatelessWidget {
