@@ -1,6 +1,6 @@
 
-[![Test](https://github.com/Shadow60539/travel_app/actions/workflows/test.yml/badge.svg?style=flat&logo=appveyor)](https://github.com/Shadow60539/travel_app/actions/workflows/test.yml)
-[![support](https://img.shields.io/badge/plateform-flutter%7Candroid%20studio-9cf?style=for-the-badge&logo=appveyor)](https://github.com/Shadow60539/travel_app)        ![GitHub Repo stars](https://img.shields.io/github/stars/Shadow60539/travel_app?style=for-the-badge)      ![GitHub forks](https://img.shields.io/github/forks/Shadow60539/travel_app?style=for-the-badge)
+[![Test](https://github.com/Shadow60539/travel_app/actions/workflows/test.yml/badge.svg?style=flat&logo=appveyor)](https://github.com/Shadow60539/travel_app/actions/workflows/test.yml) [![support](https://img.shields.io/badge/plateform-flutter%7Cvs%20code-9cf?style=flat&logo=appveyor)](https://github.com/Shadow60539/travel_app)        ![GitHub Repo stars](https://img.shields.io/github/stars/Shadow60539/travel_app?style=flat&logo=appveyor)      ![GitHub forks](https://img.shields.io/github/forks/Shadow60539/travel_app?style=flat&logo=appveyor)
+#
 ![Cover](images/cover.png)
 
 # Introduction
@@ -78,7 +78,7 @@ The project directory structure is as follows:
 
 Let me explain the other directories besides **lib**:
 
-directory | explain
+DIRECTORY | INFO
 ---|---
 images | readme images files
 asset | images and lottie files
@@ -90,11 +90,11 @@ Then the lib directory
 
 
 
-directory | explain
+DIRECTORY | INFO
 ---|---
-core | Global Classes
-infrastructure | Fetching data from backend
-domain | Converting raw json data into models -DTOs
 application | State Management 
+core | Global Classes
+domain | Abstract Classes
+infrastructure | Domain implementation (backend)
 presentation | UI
 
