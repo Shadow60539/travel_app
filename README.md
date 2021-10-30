@@ -92,9 +92,9 @@ Then the lib directory
 
 DIRECTORY | INFO
 ---|---
-application | State Management 
-core | Global Classes
-domain | Abstract Classes
-infrastructure | Domain implementation (backend)
-presentation | UI
+[application](lib/application) | State Management 
+[core](lib/core) | Global Classes
+[domain](lib/domain) | Abstract Classes
+[infrastructure](lib/infrastructure) | Domain implementation (backend)
+[presentation](lib/presentation) | UI
 
